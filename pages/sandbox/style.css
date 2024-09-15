@@ -13,3 +13,12 @@ body {
   justify-content: center;
   overflow: hidden;
 }
+
+.backLink {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+}
