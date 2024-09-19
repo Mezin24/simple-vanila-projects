@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+ background-color: #333;
+  overflow-x: hidden;
+}
+
+.backLink {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+}
+
+.container {
+  background-color:aliceblue;
+  position: relative;
+  padding: 50px;
+  transition: all 0.5s linear;
+  transform-origin: top left;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+
+.container img {
+  width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content small {
+  color: #888;
+}
+
+.content {
+  line-height: 1.5;
+}
+
+.circle-wrapper {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: #ff7979;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+
+.circle button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: : 50%;
+  font-size: 1.5rem;
+  height: 100px;
+}
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(-40deg);
+  transform-origin: top left;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+  color: white;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 18px;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transform: translateX(-150px);
+  transition: all 0.3s ease;
+  transition-delay: 0.2s;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-200px);
+}
+
+nav ul li:last-of-type {
+  margin-left: 30px;
+  transform: translateX(-250px);
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+
+}
